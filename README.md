@@ -4,3 +4,11 @@
 - захватывает весь трафик с интерфейса
 - ведет подсчет  количества уникальных five tuple key (ip_src, ip_dst, src_port, src_dst, transport_protocol), количество пакетов для каждого five tuple key
 - при завершении работы выводит данные в csv файл
+
+сборка обязательно с флагом -lpcap:
+    gcc -o main main.c -lpcap
+
+запуск обязательно через sudo:
+    sudo ./main -i enp0s3 -t 10 -f dump.csv
+    или
+    sudo ./main -i enp0s3 -c 10 -f dump.csv
